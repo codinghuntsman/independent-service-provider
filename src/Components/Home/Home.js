@@ -1,10 +1,11 @@
 import React from 'react';
 import './Home.css';
+import images from '../../images/dr-rahman-removebg.png';
 
 const Home = () => {
     return (
-        <div>
-            <h2>This is home section</h2>
+        <div className='img'>
+            <img src={images} alt="" />
         </div>
     );
 };

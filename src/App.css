@@ -1,3 +1,16 @@
+.body-section {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  margin-top: 10px;
+}
+
+.nav-title {
+  font-family: Verdana, 'Trebuchet MS';
+  font-size: 13px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

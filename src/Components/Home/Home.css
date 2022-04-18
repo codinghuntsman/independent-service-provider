@@ -1,0 +1,9 @@
+.img img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #9754d6;
+    background-image: linear-gradient(to left, top, #c07ffd, #a74aff);
+}

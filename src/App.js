@@ -7,18 +7,27 @@ import Blogs from './Components/Blogs/Blogs';
 import About from './Components/About/About';
 import Login from './Components/Login/Login';
 import Footer from './Components/Footer/Footer';
+import RequireAuth from './Components/RequireAuth/RequireAuth';
+import NotFound from './Components/NotFound/NotFound';
 
 function App() {
   return (
     <div>
       <NavBar />
-      <Routes>
-        <Route path='/home' element={<Home />}> </Route>
-        <Route path='/service' element={<Service />}> </Route>
-        <Route path='/blogs' element={<Blogs />}></Route>
-        <Route path='/about' element={<About />}></Route>
-        <Route path='/login' element={<Login />}></Route>
-      </Routes>
+      <div className='body-section'>
+        <Routes>
+          <Route path='/home' element={<Home />}> </Route>
+          <Route path='/service' element={<Service />}> </Route>
+          <Route path='/blogs' element={<Blogs />}></Route>
+          <Route path='/about' element={
+            <RequireAuth>
+              <About />
+            </RequireAuth>
+          }></Route>
+          <Route path='/login' element={<Login />}></Route>
+          <Route path='*' element={<NotFound />}></Route>
+        </Routes>
+      </div>
       <Footer />
     </div>
   );

@@ -3,8 +3,8 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <div>
-            <h2>This is footer section</h2>
+        <div className='footer'>
+            <h4>Copyright&copy; By Sajedul islam all right reserves.</h4>
         </div>
     );
 };

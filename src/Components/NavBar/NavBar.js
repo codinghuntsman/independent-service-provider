@@ -7,7 +7,7 @@ const NavBar = () => {
     const { user, handleSignOut } = useFirebase();
     return (
         <div className='navbar'>
-            <Link to='home'><h1>Firebase</h1></Link>
+            <Link className='nav-title' to='/home'><h1>Cardiac service provider</h1></Link>
             <nav>
                 <CustomLink to='/'></CustomLink>
                 <CustomLink to='/home'>Home</CustomLink>
@@ -17,6 +17,9 @@ const NavBar = () => {
                 {
                     user?.uid ? <button className='logout-btn' onClick={handleSignOut}>Log out</button>
                         : <CustomLink to='/login'>Login</CustomLink>
+                }
+                {
+                    user?.photoURL && <img className='user-img' src={user.photoURL} alt="images" title='sajedul islam' />
                 }
             </nav>
         </div >
