@@ -1,8 +1,24 @@
 import React from 'react';
 import './Service.css';
 import images from '../../images/dr-rahman-removebg.png';
+import useFirebase from './../../UseFirebase/UseFirebase';
+import { useLocation, useNavigate } from 'react-router-dom';
+
 
 const Service = () => {
+    const { signInWithGoogle } = useFirebase();
+
+    // -------redirect navigation part---------------
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location?.state?.from?.pathname || "/checkout";
+    const handleSignInWithGoogle = () => {
+        signInWithGoogle()
+            .then(() => {
+                navigate(from, { replace: true })
+            });
+    }
+    // -----------------------------------------------
     return (
         <div className='service'>
             <div>
@@ -14,7 +30,7 @@ const Service = () => {
                 </p>
                 <p><small>Any operation depend on condition</small></p>
                 <p><small>Visit: 1200</small></p>
-                <button>Please check out</button>
+                <button onClick={handleSignInWithGoogle}>Please check out</button>
             </div>
             <div>
                 <img src={images} alt="" />
@@ -26,7 +42,7 @@ const Service = () => {
                 </p>
                 <p><small>Any operation depend on condition</small></p>
                 <p><small>Visit: 1200</small></p>
-                <button>Please check out</button>
+                <button onClick={handleSignInWithGoogle}>Please check out</button>
             </div>
             <div>
                 <img src={images} alt="" />
@@ -36,7 +52,7 @@ const Service = () => {
                 </p>
                 <p><small>Any operation depend on condition</small></p>
                 <p><small>Visit: 1200</small></p>
-                <button>Please check out</button>
+                <button onClick={handleSignInWithGoogle}>Please check out</button>
             </div>
         </div>
     );

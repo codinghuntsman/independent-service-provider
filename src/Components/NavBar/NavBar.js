@@ -14,6 +14,7 @@ const NavBar = () => {
                 <CustomLink to='/service'>Service</CustomLink>
                 <CustomLink to='/blogs'>Blogs</CustomLink>
                 <CustomLink to='/about'>About</CustomLink>
+                <CustomLink to='/checkout'>Check out</CustomLink>
                 {
                     user?.uid ? <button className='logout-btn' onClick={handleSignOut}>Log out</button>
                         : <CustomLink to='/login'>Login</CustomLink>
