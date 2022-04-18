@@ -2,10 +2,12 @@ import React from 'react';
 import './Login.css';
 import useFirebase from '../../UseFirebase/UseFirebase';
 import { useState } from 'react';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail } from 'firebase/auth';
 import { getAuth } from 'firebase/auth';
 import app from './../../firebase.init';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const auth = getAuth(app);
@@ -23,8 +25,29 @@ const Login = () => {
                 navigate(from, { replace: true })
             });
     }
-    // -----------------------------------------------
+    // ------------------^^^^^^^^---------------------
 
+    //---------------email verification part-----------------
+    const VerifyEmail = () => {
+        sendEmailVerification(auth.currentUser)
+            .then(() => {
+                toast('Send verification email');
+            })
+    }
+    //---------------^^^^^^^^^^-------------------------------
+
+    //---------------Email reset part------------------------
+    const handlePasswordReset = () => {
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                toast('send email')
+            })
+            .catch((error) => {
+                const Error = error.message;
+                console.log(Error);
+            })
+    }
+    //----------------^^^^^^^^^^^---------------------------
     const handleEmail = (e) => {
         setEmail(e.target.value);
     }
@@ -33,13 +56,13 @@ const Login = () => {
     }
     const handleFormSubmit = (e) => {
         createUserWithEmailAndPassword(auth, email, password)
+
             .then((result) => {
                 const user = result.user;
-                console.log(user);
+                VerifyEmail();
             })
             .catch((error) => {
                 const errorCode = error.code;
-                console.log(errorCode);
             })
         e.preventDefault();
     }
@@ -53,9 +76,11 @@ const Login = () => {
                 </div>
                 <div className='btn'>
                     <button onClick={handleFormSubmit}>Login</button>
+                    <button onClick={handlePasswordReset}>Forget password?</button>
                     <button onClick={handleSignInWithGoogle}>continue with google</button>
                 </div>
             </form>
+            <ToastContainer />
         </div>
     );
 };
