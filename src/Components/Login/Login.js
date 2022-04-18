@@ -76,8 +76,8 @@ const Login = () => {
                 </div>
                 <div className='btn'>
                     <button onClick={handleFormSubmit}>Login</button>
-                    <button onClick={handlePasswordReset}>Forget password?</button>
                     <button onClick={handleSignInWithGoogle}>continue with google</button>
+                    <button onClick={handlePasswordReset}>Forget password?</button>
                 </div>
             </form>
             <ToastContainer />
