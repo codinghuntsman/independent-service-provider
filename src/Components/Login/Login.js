@@ -13,16 +13,17 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    // -------redirect navigation part---------------
     const location = useLocation();
     const navigate = useNavigate();
     const from = location?.state?.from?.pathname || "/";
-
     const handleSignInWithGoogle = () => {
         signInWithGoogle()
             .then(() => {
                 navigate(from, { replace: true })
-            })
+            });
     }
+    // -----------------------------------------------
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
