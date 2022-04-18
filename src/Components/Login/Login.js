@@ -52,7 +52,7 @@ const Login = () => {
                 </div>
                 <div className='btn'>
                     <button onClick={handleFormSubmit}>Login</button>
-                    <button onClick={handleSignInWithGoogle}>Login with google</button>
+                    <button onClick={handleSignInWithGoogle}>continue with google</button>
                 </div>
             </form>
         </div>

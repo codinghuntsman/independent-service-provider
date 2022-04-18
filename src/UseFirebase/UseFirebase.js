@@ -21,7 +21,7 @@ const useFirebase = () => {
         onAuthStateChanged(auth, user => {
             setUser(user);
         })
-    }, [])
+    })
 
     const handleSignOut = () => {
         signOut(auth)
