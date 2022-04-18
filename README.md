@@ -1,6 +1,7 @@
 # cardiac service provider
 
-  code link: https://github.com/programming-hero-web-course-4independent-service-provider-mdsajedulislamcse
+  https://github.com/programming-hero-web-course-4/independent-service-provider-mdsajedulislamcse
+  
  <h3>Project overview</h3>
 <li>At first a navigation bar is used and many sections are there</li>
 <li>I have used a banner for home page also there are different types of services</li>
