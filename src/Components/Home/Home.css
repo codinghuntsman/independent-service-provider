@@ -7,3 +7,11 @@
     background-color: #9754d6;
     background-image: linear-gradient(to left, top, #c07ffd, #a74aff);
 }
+
+.doctor-title h2,
+h4 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

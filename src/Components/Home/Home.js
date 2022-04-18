@@ -6,6 +6,12 @@ const Home = () => {
     return (
         <div className='img'>
             <img src={images} alt="" />
+            <div className='doctor-title'>
+                <h2>Dr. Lutfor Rahman</h2>
+                <h4>MBBS, MS (CTS)</h4>
+                <h4>Chief cardiac surgeon</h4>
+
+            </div>
         </div>
     );
 };
