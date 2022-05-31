@@ -27,6 +27,7 @@ const Blogs = () => {
                     <h4>Biometric authentication</h4>
                     Biometric authentication is a multifaceted authentication method that uses a person’s biological characteristics to access a system. Biometric authentication methods include facial recognition, fingerprint recognition, retina recognition, voice recognition, and numerous others. These methods are designed to enable people’s biological traits to become easily verified against features shared in a database, control access, and become seamlessly incorporated into multi-factor authentication operations. Each biometric method has both its pros and cons.
                 </p>
+                <p>Md sajedul islam</p>
             </div>
         </div>
     );
